@@ -1,0 +1,28 @@
+.no-dizmo-drag {
+  -webkit-dashboard-region: dashboard-region(control rectangle);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#front {
+  height: 100%;
+  width: 100%;
+}
+
+#back {
+  div.footer {
+    bottom: 10px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+  height: 100%;
+  width: 100%;
+}

@@ -1,0 +1,43 @@
+{
+  "author": {
+    "email": "hasan.karahan@blackhan.com",
+    "name": "Hasan Karahan",
+    "url": "https://github.com/hsk81"
+  },
+  "contributors": [
+    {
+      "email": "hkarahan@dizmo.com",
+      "name": "Hasan Karahan"
+    }
+  ],
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "lodash": "^4.17.15",
+    "rimraf": "^3.0.0",
+    "shelljs": "^0.8.3",
+    "yeoman-generator": "^4.0.1",
+    "yosay": "^2.0.2"
+  },
+  "description": "@dizmo/dizmo-react: a dizmo generator for react projects",
+  "files": [
+    "generators/app"
+  ],
+  "homepage": "https://git.dizmo.com/dizmo/yeoman-generator-dizmo-react",
+  "keywords": [
+    "yeoman-generator",
+    "dizmo",
+    "react",
+    "generator",
+    "dizmoGen"
+  ],
+  "license": "ISC",
+  "name": "@dizmo/generator-dizmo-react",
+  "peerDependencies": {
+    "@dizmo/generator-dizmo": "^9.1.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.dizmo.com:dizmo/yeoman-generator-dizmo-dcontrol.git"
+  },
+  "version": "0.0.0"
+}
