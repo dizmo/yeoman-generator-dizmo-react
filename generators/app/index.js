@@ -7,7 +7,9 @@ const rimraf = require('rimraf');
 
 module.exports = class extends Generator {
     initializing() {
-        this.composeWith('@dizmo/dizmo', {
+        this.composeWith(require.resolve(
+            '@dizmo/generator-dizmo/generators/app'
+        ), {
             arguments: this.arguments, ...this.options,
             typescript: undefined, coffeescript: undefined
         });

@@ -11,6 +11,7 @@
     }
   ],
   "dependencies": {
+    "@dizmo/generator-dizmo": "^9.1.10",
     "chalk": "^2.4.2",
     "lodash": "^4.17.15",
     "rimraf": "^3.0.0",
@@ -19,6 +20,11 @@
     "yosay": "^2.0.2"
   },
   "description": "@dizmo/dizmo-react: a dizmo generator for react projects",
+  "devDependencies": {
+    "mocha": "^6.2.0",
+    "yeoman-assert": "^3.1.1",
+    "yeoman-test": "^2.0.0"
+  },
   "files": [
     "generators/app"
   ],
@@ -32,12 +38,12 @@
   ],
   "license": "ISC",
   "name": "@dizmo/generator-dizmo-react",
-  "peerDependencies": {
-    "@dizmo/generator-dizmo": "^9.1.7"
-  },
   "repository": {
     "type": "git",
-    "url": "git@git.dizmo.com:dizmo/yeoman-generator-dizmo-dcontrol.git"
+    "url": "git@git.dizmo.com:dizmo/yeoman-generator-dizmo-react.git"
+  },
+  "scripts": {
+    "test": "npx mocha test --recursive"
   },
   "version": "1.0.0"
 }

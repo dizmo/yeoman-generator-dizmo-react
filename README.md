@@ -1,4 +1,5 @@
 [![NPM version](https://badge.fury.io/js/%40dizmo%2Fgenerator-dizmo-react.svg)](https://npmjs.org/package/@dizmo/generator-dizmo-react)
+[![Build Status](https://travis-ci.org/dizmo/yeoman-generator-dizmo-react.svg?branch=master)](https://travis-ci.org/dizmo/yeoman-generator-dizmo-react)
 
 # @dizmo/generator-dizmo-react
 
@@ -10,10 +11,6 @@ Sub-generator to create dizmo projects with support for [react]: This package is
 
 ```sh
 npm install -g yo
-```
-
-```sh
-npm install -g @dizmo/generator-dizmo
 ```
 
 ```sh
@@ -37,10 +34,6 @@ yo @dizmo/dizmo-react --help
 ```
 
 ## Project Upgrade
-
-```sh
-npm upgrade -g @dizmo/generator-dizmo
-```
 
 ```sh
 npm upgrade -g @dizmo/generator-dizmo-react
