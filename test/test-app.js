@@ -130,8 +130,8 @@ describe('generator-dizmo-react:app', function () {
                 },
                 'devDependencies': {
                     '@babel/core': '^7.5.5',
-                    '@babel/plugin-transform-react-jsx': '^7.3.0',
                     '@babel/preset-env': '^7.5.5',
+                    '@babel/preset-react': '^7.0.0',
                     'ansi-colors': '^4.1.1',
                     'babelify': '^10.0.0',
                     'browserify': '^16.5.0',

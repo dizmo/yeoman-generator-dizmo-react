@@ -2,10 +2,9 @@ const ignore = [
     '*.min.js', '*.umd.js'
 ];
 const plugins = [
-    '@babel/transform-react-jsx'
 ];
 const presets = [
-    '@babel/env'
+    '@babel/env', '@babel/react'
 ];
 module.exports = function (api) {
     api.cache(true);

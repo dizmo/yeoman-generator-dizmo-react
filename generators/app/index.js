@@ -47,7 +47,7 @@ const SubGenerator = (args, opts) => class extends Generator {
             );
             pkg.devDependencies = sort(
                 lodash.assign(pkg.devDependencies, {
-                    '@babel/plugin-transform-react-jsx': '^7.3.0',
+                    '@babel/preset-react': '^7.0.0',
                     'eslint-plugin-react': '^7.14.3'
                 })
             );
