@@ -73,6 +73,10 @@ const SubGenerator = (args, opts) => class extends Generator {
                 }
             );
             this.fs.copy(
+                this.templatePath('src/components/_gitignore'),
+                this.destinationPath('src/components/.gitignore')
+            );
+            this.fs.copy(
                 this.templatePath('_eslintrc.json'),
                 this.destinationPath('.eslintrc.json')
             );
@@ -84,6 +88,9 @@ const SubGenerator = (args, opts) => class extends Generator {
         this.conflicter.force = this.options.force || upgrade;
     }
     end() {
+        rimraf.sync(
+            this.destinationPath('src/components/_gitignore')
+        );
         rimraf.sync(
             this.destinationPath('assets/locales')
         );
