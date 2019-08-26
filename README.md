@@ -49,7 +49,7 @@ yo @dizmo/dizmo-react --upgrade
 
 ### Is SASS supported?
 
-Yes: While any `style/**/*.scss` (from `src/`) will transpiled and bundled as `style.css` (to `build/`), it's also possible to style components via `components/**/*.scss`, which *however* need to be imported as `*.css`! So, for example in `components/App.js` the `components/App.scss` file needs to be imported as:
+Yes: While any `style/**/*.scss` (from `src/`) will get transpiled and bundled as `style.css` (to `build/`), it's also possible to style components via `components/**/*.scss`, which *however* need to be imported as `*.css`! So, for example in `components/App.js` the `components/App.scss` file needs to be imported as:
 
 ```javascript
 import './App.css';
