@@ -38,6 +38,10 @@ const SubGenerator = (args, opts) => class extends Generator {
                 this.templatePath('gulp/'),
                 this.destinationPath('gulp/')
             );
+            this.fs.copy(
+                this.templatePath('babel.config.js'),
+                this.destinationPath('babel.config.js')
+            );
         }
         if (!upgrade || upgrade) {
             pkg.devDependencies = sort(
@@ -79,10 +83,6 @@ const SubGenerator = (args, opts) => class extends Generator {
             this.fs.copy(
                 this.templatePath('_eslintrc.json'),
                 this.destinationPath('.eslintrc.json')
-            );
-            this.fs.copy(
-                this.templatePath('babel.config.js'),
-                this.destinationPath('babel.config.js')
             );
         }
         this.conflicter.force = this.options.force || upgrade;
