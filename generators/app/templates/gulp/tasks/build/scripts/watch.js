@@ -11,10 +11,20 @@ let buffer = require('vinyl-buffer'),
     through = require('through2'),
     watchify = require('watchify');
 
-let watched = watchify(browserify({basedir: '.', entries: [
-        'node_modules/@babel/polyfill/dist/polyfill.js', 'src/index.js'
-    ], cache: {}, packageCache: {}, debug: false
-}).transform('babelify').transform('browserify-css'));
+let watched = watchify(
+    browserify({
+        basedir: '.',
+        cache: {},
+        debug: true,
+        entries: [
+            'node_modules/@babel/polyfill/dist/polyfill.js',
+            'src/index.js'
+        ],
+        packageCache: {}
+    })
+    .transform('babelify')
+    .transform('browserify-css')
+);
 
 function ensure(package, callback) {
     require('fs').access(

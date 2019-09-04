@@ -95,9 +95,16 @@ gulp.task('scripts', function () {
         argv.uglify = JSON.parse(argv.uglify);
     }
 
-    let browserified = browserify({basedir: '.', entries: [
-        'node_modules/@babel/polyfill/dist/polyfill.js', 'src/index.js'
-    ]}).transform('babelify').transform('browserify-css');
+    let browserified = browserify({
+        basedir: '.',
+        debug: !!argv.sourcemaps,
+        entries: [
+            'node_modules/@babel/polyfill/dist/polyfill.js',
+            'src/index.js'
+        ]
+    })
+    .transform('babelify')
+    .transform('browserify-css');
 
     let stream = browserified.bundle()
         .pipe(source('index.js')).pipe(buffer());
