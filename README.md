@@ -55,6 +55,14 @@ Yes: While any `style/**/*.scss` (from `src/`) will get transpiled and bundled a
 import './App.css';
 ```
 
+### Is it possible to use React's Production build?
+
+Yes: Just prefix the build command with the `NODE_ENV=production` environment variable; for example:
+
+```sh
+NODE_ENV=production npm run -- build --minify
+```
+
 ## Further Information
 
 See the description of the main [@dizmo/generator-dizmo] package for a more exhaustive documentation.
