@@ -45,26 +45,9 @@ Then, within an existing project:
 yo @dizmo/dizmo-react --upgrade
 ```
 
-## FAQ
-
-### Is SASS supported?
-
-Yes: While any `style/**/*.scss` (from `src/`) will get transpiled and bundled as `style.css` (to `build/`), it's also possible to style components via `components/**/*.scss`, which *however* need to be imported as `*.css`! So, for example in `components/App.js` the `components/App.scss` file needs to be imported as:
-
-```javascript
-import './App.css';
-```
-
-### Is it possible to use React's Production build?
-
-Yes: Just prefix the build command with the `NODE_ENV=production` environment variable; for example:
-
-```sh
-NODE_ENV=production npm run -- build --minify
-```
-
 ## Further Information
 
 See the description of the main [@dizmo/generator-dizmo] package for a more exhaustive documentation.
 
 [@dizmo/generator-dizmo]: https://www.npmjs.com/package/@dizmo/generator-dizmo
+s

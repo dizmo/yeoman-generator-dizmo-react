@@ -38,27 +38,39 @@ const SubGenerator = (args, opts) => class extends Generator {
                 this.templatePath('gulp/'),
                 this.destinationPath('gulp/')
             );
-            this.fs.copy(
-                this.templatePath('babel.config.js'),
-                this.destinationPath('babel.config.js')
+            this.fs.copyTpl(
+                this.templatePath('webpack.config.js'),
+                this.destinationPath('webpack.config.js'), {
+                    dizmoName: pkg.name
+                }
             );
         }
         if (!upgrade || upgrade) {
             pkg.devDependencies = sort(
                 lodash.assign(pkg.devDependencies, {
-                    'browserify-css': '^0.15.0'
-                })
-            );
-            pkg.devDependencies = sort(
-                lodash.assign(pkg.devDependencies, {
-                    '@babel/preset-react': '^7.0.0',
-                    'eslint-plugin-react': '^7.14.3'
+                    '@babel/preset-react': '^7.6.3',
+                    'eslint-plugin-react': '^7.16.0'
                 })
             );
             pkg.dependencies = sort(
                 lodash.assign(pkg.dependencies, {
-                    'react': '^16.9.0',
-                    'react-dom': '^16.9.0'
+                    'react': '^16.10.2',
+                    'react-dom': '^16.10.2'
+                })
+            );
+            this.fs.writeJSON(
+                this.destinationPath('package.json'), pkg, null, 2
+            );
+        }
+        if (!upgrade || upgrade) {
+            delete pkg.devDependencies['gulp-sass'];
+            delete pkg.devDependencies['gulp-sourcemaps'];
+            pkg.devDependencies = sort(
+                lodash.assign(pkg.devDependencies, {
+                    'css-loader': '^3.2.0',
+                    'node-sass': '^4.12.0',
+                    'sass-loader': '^8.0.0',
+                    'style-loader': '^1.0.0'
                 })
             );
             this.fs.writeJSON(
@@ -77,10 +89,6 @@ const SubGenerator = (args, opts) => class extends Generator {
                 }
             );
             this.fs.copy(
-                this.templatePath('src/components/_gitignore'),
-                this.destinationPath('src/components/.gitignore')
-            );
-            this.fs.copy(
                 this.templatePath('_eslintrc.json'),
                 this.destinationPath('.eslintrc.json')
             );
@@ -89,7 +97,7 @@ const SubGenerator = (args, opts) => class extends Generator {
     }
     end() {
         rimraf.sync(
-            this.destinationPath('src/components/_gitignore')
+            this.destinationPath('gulp/tasks/build/styles')
         );
         rimraf.sync(
             this.destinationPath('assets/locales')

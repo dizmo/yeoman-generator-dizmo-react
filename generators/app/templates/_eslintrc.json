@@ -5,20 +5,14 @@
     ],
     "env": {
         "browser": true,
-        "node": true
+        "es6": true
     },
     "globals": {
         "bundle": false,
         "dizmo": false,
-        "viewer": false,
-        "DizmoElements": false
+        "viewer": false
     },
     "parserOptions": {
-        "ecmaFeatures": {
-            "generators": true,
-            "jsx": true
-        },
-        "ecmaVersion": 2017,
         "sourceType": "module"
     },
     "settings": {
