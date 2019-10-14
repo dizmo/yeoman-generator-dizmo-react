@@ -15,7 +15,6 @@ describe('generator-dizmo-react:app', function () {
                 'assets/Icon-dark.svg',
                 'assets/Icon.svg',
                 'assets/Preview.png',
-                'babel.config.js',
                 '.eslintrc.json',
                 'gulp',
                 'gulp/miscellanea',
@@ -52,9 +51,6 @@ describe('generator-dizmo-react:app', function () {
                 'gulp/tasks/build/scripts',
                 'gulp/tasks/build/scripts/index.js',
                 'gulp/tasks/build/scripts/watch.js',
-                'gulp/tasks/build/styles',
-                'gulp/tasks/build/styles/index.js',
-                'gulp/tasks/build/styles/watch.js',
                 'gulp/tasks/build/watch.js',
                 'gulp/tasks/clean',
                 'gulp/tasks/clean/index.js',
@@ -79,13 +75,13 @@ describe('generator-dizmo-react:app', function () {
                 'README.md',
                 'src',
                 'src/components',
-                'src/components/.gitignore',
                 'src/components/App.scss',
                 'src/components/App.js',
                 'src/index.html',
                 'src/index.js',
                 'src/style',
                 'src/style/style.scss',
+                'webpack.config.js',
                 '.yo-rc.json',
             ]);
             assert.jsonFileContent('package.json', {
@@ -118,26 +114,21 @@ describe('generator-dizmo-react:app', function () {
                     },
                     'store': {
                         'host': 'https://store-api.dizmo.com'
-                    },
-                    'build': {
-                        'lint': true,
-                        'minify': false
                     }
                 },
                 'dependencies': {
-                    '@babel/polyfill': '^7.4.4',
-                    'react': '^16.9.0',
-                    'react-dom': '^16.9.0'
+                    '@babel/polyfill': '^7.6.0',
+                    'react': '^16.10.2',
+                    'react-dom': '^16.10.2'
                 },
                 'devDependencies': {
-                    '@babel/core': '^7.5.5',
-                    '@babel/preset-env': '^7.5.5',
-                    '@babel/preset-react': '^7.0.0',
+                    '@babel/core': '^7.6.3',
+                    '@babel/preset-env': '^7.6.3',
+                    '@babel/preset-react': '^7.6.3',
                     'ansi-colors': '^4.1.1',
-                    'babelify': '^10.0.0',
-                    'browserify': '^16.5.0',
-                    'browserify-css': '^0.15.0',
-                    'eslint-plugin-react': '^7.14.3',
+                    'babel-loader': '^8.0.6',
+                    'css-loader': '^3.2.0',
+                    'eslint-plugin-react': '^7.16.0',
                     'fancy-log': '^1.3.3',
                     'gulp': '^4.0.2',
                     'gulp-copy': '^4.0.1',
@@ -145,17 +136,19 @@ describe('generator-dizmo-react:app', function () {
                     'gulp-htmlmin': '^5.0.1',
                     'gulp-plist': '^0.1.0',
                     'gulp-rename': '^1.4.0',
-                    'gulp-sass': '^4.0.2',
-                    'gulp-sourcemaps': '^2.6.5',
-                    'gulp-uglify': '^3.0.2',
                     'gulp-ver': '^0.1.0',
-                    'gulp-zip': '^5.0.0',
-                    'lodash': '^4.17.15',
+                    'gulp-zip': '^5.0.1',
+                    'node-sass': '^4.12.0',
                     'rimraf': '^3.0.0',
-                    'vinyl-buffer': '^1.0.1',
-                    'vinyl-source-stream': '^2.0.0',
-                    'watchify': '^3.11.1',
-                    'xtend': '^4.0.2'
+                    'sass-loader': '^8.0.0',
+                    'style-loader': '^1.0.0',
+                    'webpack': '^4.41.0',
+                    'webpack-stream': '^5.2.1'
+                },
+                'optionalDependencies': {
+                    'pump': '^3.0.0',
+                    'terser-webpack-plugin': '^2.1.2',
+                    'webpack-obfuscator': '^0.18.3'
                 },
                 'license': 'ISC',
                 'private': true,
@@ -171,10 +164,6 @@ describe('generator-dizmo-react:app', function () {
                     'test': 'exit 0',
                     'upload': 'node ./gulp/scripts/upload.js',
                     'watch': 'node ./gulp/scripts/watch.js'
-                },
-                'optionalDependencies': {
-                    'javascript-obfuscator': '^0.18.1',
-                    'pump': '^3.0.0'
                 }
             });
         });
