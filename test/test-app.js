@@ -122,7 +122,7 @@ describe('generator-dizmo-react:app', function () {
                     'react-dom': '^16.10.2'
                 },
                 'devDependencies': {
-                    '@babel/core': '^7.6.3',
+                    '@babel/core': '^7.6.4',
                     '@babel/preset-env': '^7.6.3',
                     '@babel/preset-react': '^7.6.3',
                     'ansi-colors': '^4.1.1',
@@ -142,12 +142,12 @@ describe('generator-dizmo-react:app', function () {
                     'rimraf': '^3.0.0',
                     'sass-loader': '^8.0.0',
                     'style-loader': '^1.0.0',
-                    'webpack': '^4.41.0',
+                    'webpack': '^4.41.1',
                     'webpack-stream': '^5.2.1'
                 },
                 'optionalDependencies': {
                     'pump': '^3.0.0',
-                    'terser-webpack-plugin': '^2.1.2',
+                    'terser-webpack-plugin': '^2.1.3',
                     'webpack-obfuscator': '^0.18.3'
                 },
                 'license': 'ISC',
