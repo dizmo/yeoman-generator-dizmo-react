@@ -27,9 +27,8 @@ const SubGenerator = (args, opts) => class extends Generator {
         this.destinationRoot(process.cwd());
     }
     writing() {
-        const pkg = this.fs.readJSON(
-            this.destinationPath('package.json')
-        );
+        const pkg_path = this.destinationPath('package.json');
+        const pkg = this.fs.readJSON(pkg_path);
         const upgrade = Boolean(
             this.options.upgrade && fs.existsSync('package.json')
         );
@@ -46,21 +45,19 @@ const SubGenerator = (args, opts) => class extends Generator {
             );
         }
         if (!upgrade || upgrade) {
-            pkg.devDependencies = sort(
-                lodash.assign(pkg.devDependencies, {
-                    '@babel/preset-react': '^7.6.3',
-                    'eslint-plugin-react': '^7.16.0'
-                })
-            );
             pkg.dependencies = sort(
                 lodash.assign(pkg.dependencies, {
                     'react': '^16.10.2',
                     'react-dom': '^16.10.2'
                 })
             );
-            this.fs.writeJSON(
-                this.destinationPath('package.json'), pkg, null, 2
+            pkg.devDependencies = sort(
+                lodash.assign(pkg.devDependencies, {
+                    '@babel/preset-react': '^7.6.3',
+                    'eslint-plugin-react': '^7.16.0'
+                })
             );
+            this.fs.writeJSON(pkg_path, pkg, null, 2);
         }
         if (!upgrade || upgrade) {
             delete pkg.devDependencies['gulp-sass'];
@@ -73,9 +70,7 @@ const SubGenerator = (args, opts) => class extends Generator {
                     'style-loader': '^1.0.0'
                 })
             );
-            this.fs.writeJSON(
-                this.destinationPath('package.json'), pkg, null, 2
-            );
+            this.fs.writeJSON(pkg_path, pkg, null, 2);
         }
         if (!upgrade) {
             this.fs.copy(
