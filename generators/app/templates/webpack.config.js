@@ -7,12 +7,10 @@ module.exports = {
     module: {
         rules: [{
             test: /\.(css|s[ac]ss)$/i,
-            use: [
-                'style-loader', 'css-loader', 'sass-loader'
-            ],
+            use: ['style-loader', 'css-loader', 'sass-loader']
         }, {
-            test: /\.js$/,
-            exclude: [/\.(min|umd)\.js$/],
+            test: /\.js$/i,
+            exclude: /\.(min|umd)\.js$/i,
             use: {
                 loader: 'babel-loader',
                 options: {

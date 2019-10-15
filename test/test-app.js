@@ -142,7 +142,7 @@ describe('generator-dizmo-react:app', function () {
                     'rimraf': '^3.0.0',
                     'sass-loader': '^8.0.0',
                     'style-loader': '^1.0.0',
-                    'webpack': '^4.41.1',
+                    'webpack': '^4.41.2',
                     'webpack-stream': '^5.2.1'
                 },
                 'optionalDependencies': {
