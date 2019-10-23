@@ -38,7 +38,9 @@ const SubGenerator = (args, opts) => class extends Generator {
                 this.templatePath('gulp/'),
                 this.destinationPath('gulp/')
             );
-            this.fs.copyTpl(
+            if (!this.fs.exists(this.destinationPath(
+                'webpack.config.js'
+            ))) this.fs.copyTpl(
                 this.templatePath('webpack.config.js'),
                 this.destinationPath('webpack.config.js'), {
                     dizmoName: pkg.name
