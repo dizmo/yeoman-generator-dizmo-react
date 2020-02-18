@@ -48,24 +48,24 @@ const SubGenerator = (args, opts) => class extends Generator {
         if (!upgrade || upgrade) {
             pkg.dependencies = sort(
                 lodash.assign(pkg.dependencies, {
-                    'react': '^16.10.2',
-                    'react-dom': '^16.10.2'
+                    'react': '^16.12.0',
+                    'react-dom': '^16.12.0'
                 })
             );
             pkg.devDependencies = sort(
                 lodash.assign(pkg.devDependencies, {
-                    '@babel/preset-react': '^7.6.3',
-                    'eslint-plugin-react': '^7.16.0'
+                    '@babel/preset-react': '^7.8.3',
+                    'eslint-plugin-react': '^7.18.3'
                 })
             );
         }
         if (!upgrade || upgrade) {
             pkg.devDependencies = sort(
                 lodash.assign(pkg.devDependencies, {
-                    'css-loader': '^3.2.0',
-                    'node-sass': '^4.12.0',
-                    'sass-loader': '^8.0.0',
-                    'style-loader': '^1.0.0'
+                    'css-loader': '^3.4.2',
+                    'node-sass': '^4.13.1',
+                    'sass-loader': '^8.0.2',
+                    'style-loader': '^1.1.3'
                 })
             );
             delete pkg.devDependencies['gulp-sass'];
