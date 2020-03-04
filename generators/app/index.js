@@ -48,8 +48,8 @@ const SubGenerator = (args, opts) => class extends Generator {
         if (!upgrade || upgrade) {
             pkg.dependencies = sort(
                 lodash.assign(pkg.dependencies, {
-                    'react': '^16.12.0',
-                    'react-dom': '^16.12.0'
+                    'react': '^16.13.0',
+                    'react-dom': '^16.13.0'
                 })
             );
             pkg.devDependencies = sort(
