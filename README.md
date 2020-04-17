@@ -50,4 +50,7 @@ yo @dizmo/dizmo-react --upgrade
 See the description of the main [@dizmo/generator-dizmo] package for a more exhaustive documentation.
 
 [@dizmo/generator-dizmo]: https://www.npmjs.com/package/@dizmo/generator-dizmo
-s
+
+## Copyright
+
+ © [dizmo AG](http://dizmo.com/), Switzerland
