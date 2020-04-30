@@ -122,12 +122,12 @@ describe('generator-dizmo-react:app', function () {
                     'react-dom': '^16.13.1'
                 },
                 'devDependencies': {
-                    '@babel/core': '^7.9.0',
-                    '@babel/preset-env': '^7.9.5',
+                    '@babel/core': '^7.9.6',
+                    '@babel/preset-env': '^7.9.6',
                     '@babel/preset-react': '^7.9.4',
                     'ansi-colors': '^4.1.1',
                     'babel-loader': '^8.1.0',
-                    'css-loader': '^3.5.2',
+                    'css-loader': '^3.5.3',
                     'eslint-plugin-react': '^7.19.0',
                     'fancy-log': '^1.3.3',
                     'gulp': '^4.0.2',
@@ -138,17 +138,18 @@ describe('generator-dizmo-react:app', function () {
                     'gulp-rename': '^2.0.0',
                     'gulp-ver': '^0.1.0',
                     'gulp-zip': '^5.0.1',
-                    'node-sass': '^4.13.1',
+                    'node-sass': '^4.14.0',
                     'rimraf': '^3.0.2',
                     'sass-loader': '^8.0.2',
-                    'style-loader': '^1.1.4',
-                    'webpack': '^4.42.1',
+                    'style-loader': '^1.2.1',
+                    'webpack': '^4.43.0',
                     'webpack-stream': '^5.2.1'
                 },
                 'optionalDependencies': {
+                    'closure-webpack-plugin': '^2.3.0',
+                    'google-closure-compiler': '^20200406.0.0',
                     'pump': '^3.0.0',
-                    'terser-webpack-plugin': '^2.3.5',
-                    'webpack-obfuscator': '^0.27.4'
+                    'webpack-obfuscator': '^0.28.0'
                 },
                 'license': 'ISC',
                 'private': true,
