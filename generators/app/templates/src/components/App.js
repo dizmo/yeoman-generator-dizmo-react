@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.scss';
 
-export default class App extends React.Component {
+/**
+ * @class App
+ */
+class App extends React.Component {
+    /** Render method */
     render() {
-        return (
-            <h1>Hello {bundle.getAttribute('name')}!</h1>
-        );
+        return (<h1>Hello {bundle.getAttribute('name')}!</h1>);
     }
 }
+export default App;
