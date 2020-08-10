@@ -54,17 +54,17 @@ const SubGenerator = (args, opts) => class extends Generator {
             );
             pkg.devDependencies = sort(
                 lodash.assign(pkg.devDependencies, {
-                    '@babel/preset-react': '^7.9.4',
-                    'eslint-plugin-react': '^7.20.0'
+                    '@babel/preset-react': '^7.10.4',
+                    'eslint-plugin-react': '^7.20.5'
                 })
             );
         }
         if (!upgrade || upgrade) {
             pkg.devDependencies = sort(
                 lodash.assign(pkg.devDependencies, {
-                    'css-loader': '^3.5.3',
+                    'css-loader': '^4.2.1',
                     'node-sass': '^4.14.1',
-                    'sass-loader': '^8.0.2',
+                    'sass-loader': '^9.0.3',
                     'style-loader': '^1.2.1'
                 })
             );
