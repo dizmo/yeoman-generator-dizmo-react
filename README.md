@@ -1,5 +1,5 @@
 [![NPM version](https://badge.fury.io/js/%40dizmo%2Fgenerator-dizmo-react.svg)](https://npmjs.org/package/@dizmo/generator-dizmo-react)
-[![Build Status](https://travis-ci.org/dizmo/yeoman-generator-dizmo-react.svg?branch=master)](https://travis-ci.org/dizmo/yeoman-generator-dizmo-react)
+[![Build Status](https://travis-ci.com/dizmo/yeoman-generator-dizmo-react.svg?branch=master)](https://travis-ci.com/dizmo/yeoman-generator-dizmo-react)
 
 # @dizmo/generator-dizmo-react
 
