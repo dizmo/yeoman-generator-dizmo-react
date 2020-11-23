@@ -11,7 +11,7 @@
     }
   ],
   "dependencies": {
-    "@dizmo/generator-dizmo": "^10.6.4",
+    "@dizmo/generator-dizmo": "^10.6.6",
     "chalk": "^4.1.0",
     "lodash": "^4.17.20",
     "rimraf": "^3.0.2",
@@ -21,7 +21,7 @@
   },
   "description": "@dizmo/dizmo-react: a dizmo generator for react projects",
   "devDependencies": {
-    "mocha": "^8.2.0",
+    "mocha": "^8.2.1",
     "yeoman-assert": "^3.1.1",
     "yeoman-test": "^3.0.0"
   },
