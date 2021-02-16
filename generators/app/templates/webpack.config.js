@@ -1,4 +1,5 @@
 const { resolve } = require('path');
+const webpack = require('webpack')
 
 module.exports = {
     entry: {
@@ -24,8 +25,14 @@ module.exports = {
             }
         }]
     },
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env': {}
+        })
+    ],
     output: {
         path: resolve(__dirname, 'build', '<%= dizmoName %>'),
+        environment: { arrowFunction: false },
         filename: 'index.js'
     },
     mode: 'none'

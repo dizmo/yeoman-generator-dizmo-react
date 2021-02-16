@@ -11,19 +11,19 @@
     }
   ],
   "dependencies": {
-    "@dizmo/generator-dizmo": "^10.6.6",
+    "@dizmo/generator-dizmo": "^10.6.15",
     "chalk": "^4.1.0",
     "lodash": "^4.17.20",
     "rimraf": "^3.0.2",
     "shelljs": "^0.8.4",
-    "yeoman-generator": "^4.12.0",
+    "yeoman-generator": "^4.13.0",
     "yosay": "^2.0.2"
   },
   "description": "@dizmo/dizmo-react: a dizmo generator for react projects",
   "devDependencies": {
-    "mocha": "^8.2.1",
+    "mocha": "^8.3.0",
     "yeoman-assert": "^3.1.1",
-    "yeoman-test": "^3.0.0"
+    "yeoman-test": "^4.0.0"
   },
   "files": [
     "generators/app"
