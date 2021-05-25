@@ -3,7 +3,7 @@ const webpack = require('webpack')
 
 module.exports = {
     entry: {
-        main: ['@babel/polyfill', './src/index.js']
+        main: ['core-js/stable', 'regenerator-runtime/runtime', './src/index.js']
     },
     module: {
         rules: [{

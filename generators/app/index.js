@@ -7,24 +7,24 @@ const rimraf = require('rimraf');
 
 module.exports = class extends Generator {
     initializing() {
-        this.composeWith(require.resolve(
+        const app = this.composeWith(require.resolve(
             '@dizmo/generator-dizmo/generators/app'
         ), {
             arguments: this.arguments, ...this.options,
             typescript: undefined, coffeescript: undefined
         });
-        this.composeWith({
-            Generator: SubGenerator(this.arguments, this.options),
+        const sub = this.composeWith({
+            Generator: SubGenerator(this.arguments, this.options)(app),
             path: require.resolve('.')
         });
     }
 }
-const SubGenerator = (args, opts) => class extends Generator {
+const SubGenerator = (args, opts) => (app) => class extends Generator {
     constructor() {
         super(args, opts);
     }
     configuring() {
-        this.destinationRoot(process.cwd());
+        this.destinationRoot(app.destinationRoot());
     }
     writing() {
         const upgrade = Boolean(
@@ -48,14 +48,21 @@ const SubGenerator = (args, opts) => class extends Generator {
         if (!upgrade || upgrade) {
             pkg.dependencies = sort(
                 lodash.assign(pkg.dependencies, {
-                    'react': '^17.0.1',
-                    'react-dom': '^17.0.1'
+                    'react': '^17.0.2',
+                    'react-dom': '^17.0.2'
                 })
             );
             pkg.devDependencies = sort(
                 lodash.assign(pkg.devDependencies, {
-                    '@babel/preset-react': '^7.12.7',
-                    'eslint-plugin-react': '^7.21.5'
+                    '@babel/preset-react': '^7.13.13',
+                    'eslint-plugin-react': '^7.23.2'
+                })
+            );
+        }
+        if (!upgrade || upgrade) {
+            pkg.script = sort(
+                lodash.assign(pkg.scripts, {
+                    'test': 'exit 0'
                 })
             );
         }
@@ -63,14 +70,22 @@ const SubGenerator = (args, opts) => class extends Generator {
             delete pkg.devDependencies['gulp-sass'];
             delete pkg.devDependencies['gulp-sourcemaps'];
         }
+        if (!upgrade || upgrade) {
+            delete pkg.optionalDependencies['chai'];
+            delete pkg.optionalDependencies['chai-spies'];
+            delete pkg.optionalDependencies['ignore-styles'];
+            delete pkg.optionalDependencies['jsdom'];
+            delete pkg.optionalDependencies['jsdom-global'];
+            delete pkg.optionalDependencies['mocha'];
+        }
         if (!upgrade) {
             this.fs.copy(
-                this.templatePath('src/'),
-                this.destinationPath('src/')
+                this.templatePath('source/'),
+                this.destinationPath('source/')
             );
             this.fs.copyTpl(
-                this.templatePath('src/index.html'),
-                this.destinationPath('src/index.html'), {
+                this.templatePath('source/index.html'),
+                this.destinationPath('source/index.html'), {
                     dizmoName: pkg.name
                 }
             );
@@ -82,7 +97,7 @@ const SubGenerator = (args, opts) => class extends Generator {
         this.fs.writeJSON(
             this.destinationPath('package.json'), pkg, null, 2
         );
-        this.conflicter.force = this.options.force || upgrade;
+        this.env.conflicter.force = this.options.force || upgrade;
     }
     end() {
         rimraf.sync(
@@ -92,7 +107,13 @@ const SubGenerator = (args, opts) => class extends Generator {
             this.destinationPath('assets/locales')
         );
         rimraf.sync(
-            this.destinationPath('src/lib')
+            this.destinationPath('source/lib')
+        );
+        rimraf.sync(
+            this.destinationPath('test')
+        );
+        rimraf.sync(
+            this.destinationPath('webpack.config.test.js')
         );
     }
 };
