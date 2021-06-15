@@ -54,8 +54,8 @@ const SubGenerator = (args, opts) => (app) => class extends Generator {
             );
             pkg.devDependencies = sort(
                 lodash.assign(pkg.devDependencies, {
-                    '@babel/preset-react': '^7.13.13',
-                    'eslint-plugin-react': '^7.23.2'
+                    '@babel/preset-react': '^7.14.5',
+                    'eslint-plugin-react': '^7.24.0'
                 })
             );
         }
