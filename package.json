@@ -11,7 +11,7 @@
     }
   ],
   "dependencies": {
-    "@dizmo/generator-dizmo": "^10.8.8",
+    "@dizmo/generator-dizmo": "^10.9.1",
     "chalk": "^4.1.1",
     "lodash": "^4.17.21",
     "rimraf": "^3.0.2",
