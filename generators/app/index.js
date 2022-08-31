@@ -48,14 +48,14 @@ const SubGenerator = (args, opts) => (app) => class extends Generator {
         if (!upgrade || upgrade) {
             pkg.dependencies = sort(
                 lodash.assign(pkg.dependencies, {
-                    'react': '^17.0.2',
-                    'react-dom': '^17.0.2'
+                    'react': '^18.2.0',
+                    'react-dom': '^18.2.0'
                 })
             );
             pkg.devDependencies = sort(
                 lodash.assign(pkg.devDependencies, {
-                    '@babel/preset-react': '^7.14.5',
-                    'eslint-plugin-react': '^7.24.0'
+                    '@babel/preset-react': '^7.18.6',
+                    'eslint-plugin-react': '^7.31.1'
                 })
             );
         }
